@@ -6,5 +6,8 @@ pretty:
 watch:
 	npx grunt
 
-run:
-	node app.js
+dev:
+	npm run dev
+
+deploy:
+	npm run deploy

@@ -1,7 +1,19 @@
-# BM25 Search Demo
+# Isha Sadhana QA
 
-Run `npm install` to get dependencies and `grunt` to run `browserify` that'll
-make your JS ready to use in the browser.
+It was made using on this project: https://github.com/winkjs/showcase-bm25-text-search
 
-The data that is being searched can be found here:
-https://github.com/winkjs/wink-bm25-text-search/blob/master/sample-data/demo-data-for-wink-bm25.json
+## Run
+
+To start a small express server on `localhost:3000` :
+
+```sh
+make dev
+```
+
+## Deploy
+
+To deploy to GitHub pages:
+
+```sh
+make deploy
+```
