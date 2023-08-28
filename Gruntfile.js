@@ -8,7 +8,7 @@ module.exports = function (grunt) {
 			'public/bundle.js': 'public/search.js',
 		},
 		watch: {
-			files: ['public/search.js'],
+			files: ['public/search.js', 'public/data/*'],
 			tasks: ['browserify'],
 		},
 	});
