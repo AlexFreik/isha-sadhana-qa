@@ -1,0 +1,131 @@
+html,
+body {
+	background: #eaeaea;
+	margin: 0;
+	padding: 0;
+	font-family: 'ff-tisa-sans-web-pro', serif;
+}
+
+a {
+	color: #6c307d;
+}
+
+.hidden {
+	transition: all 333ms ease;
+	opacity: 0;
+	padding-top: 40px;
+}
+
+.shown {
+	transition: all 333ms ease;
+	opacity: 1;
+	padding-top: 0px;
+}
+
+.container {
+	width: 640px;
+	margin: 120px auto;
+}
+
+header {
+	padding-top: 50px;
+	border-bottom: 4px solid black;
+	display: flex;
+	align-items: baseline;
+}
+
+h1 {
+	margin: 0;
+}
+
+nav {
+	flex-grow: 1;
+	text-align: right;
+}
+
+input {
+	font-family: 'ff-tisa-sans-web-pro', serif;
+	border: none;
+	border-bottom: 2px solid #6c307d;
+	width: 100%;
+	font-size: 40px;
+	background: transparent;
+	margin-bottom: 30px;
+}
+
+input::placeholder {
+	color: #ccc;
+}
+
+input:focus {
+	outline: 0;
+}
+
+#help {
+	line-height: 25px;
+	font-family: 'Hoefler Text', Georgia, serif;
+	color: #666;
+	font-size: 18px;
+	margin-top: 60px;
+}
+
+#noresults {
+	text-align: center;
+	line-height: 25px;
+	font-family: 'Hoefler Text', Georgia, serif;
+	color: #ccc;
+	font-size: 18px;
+	margin-top: 60px;
+}
+
+#noresults h2 {
+	color: #aaa;
+}
+
+h3,
+h2 {
+	margin-bottom: 0;
+	text-transform: capitalize;
+}
+
+h3 {
+	margin-top: 60px;
+}
+
+p {
+	margin-top: 0;
+}
+
+mark {
+	background: #6c307d;
+	color: white;
+	padding: 0 0.3rem;
+	display: inline-block;
+	margin: 0 0.3rem;
+	border-radius: 2px;
+}
+
+.sample-data {
+	display: none;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+td,
+th {
+	border: 1px solid gray;
+	vertical-align: text-bottom;
+	padding: 1rem;
+}
+
+th {
+	width: 33%;
+	text-align: left;
+}
+
+td {
+	background: white;
+	font-size: 0.75rem;
+}
