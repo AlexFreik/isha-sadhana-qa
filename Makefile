@@ -5,6 +5,7 @@ pretty:
 
 build:
 	npx grunt browserify
+
 watch:
 	npx grunt
 

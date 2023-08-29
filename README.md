@@ -1,6 +1,6 @@
 # Isha Sadhana QA
 
-[![gh pages deploy badge](https://github.com/AlexFreik/isha-sadhana-qa/actions/workflows/deploy.yml/badge.svg)](https://alexfreik.github.io/isha-sadhana-qa/)
+[![gh pages deploy badge](https://github.com/AlexFreik/isha-sadhana-qa/actions/workflows/static.yml/badge.svg)](https://alexfreik.github.io/isha-sadhana-qa/)
 
 It was made using on this project: https://github.com/winkjs/showcase-bm25-text-search
 
