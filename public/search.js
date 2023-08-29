@@ -77,8 +77,8 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	function highlightTerms(body, spotted) {
 		spotted.forEach(function (term) {
-			var r = new RegExp('\\W(' + term + ')\\W', 'ig');
-			body = body.replace(r, ' <mark>$1</mark> ');
+			var r = new RegExp('(\\W)(' + term + ')(\\W)', 'ig');
+			body = body.replace(r, '$1 <mark>$2</mark> $3');
 		});
 		return body;
 	}
