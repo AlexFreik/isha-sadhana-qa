@@ -8,6 +8,3 @@ build:
 
 dev: build
 	npx grunt & npm run dev
-
-deploy:
-	npm run deploy
