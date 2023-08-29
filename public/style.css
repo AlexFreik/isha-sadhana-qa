@@ -95,13 +95,21 @@ p {
 	margin-top: 0;
 }
 
-mark {
+p mark,
+small mark {
 	background: #6c307d;
 	color: white;
 	padding: 0 0.3rem;
 	display: inline-block;
 	margin: 0 0.3rem;
 	border-radius: 2px;
+}
+
+h2 mark,
+h3 mark {
+	background: transparent;
+	text-decoration: underline;
+	text-decoration-color: #6c307d;
 }
 
 @media screen {
