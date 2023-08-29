@@ -6,11 +6,8 @@ pretty:
 build:
 	npx grunt browserify
 
-watch:
-	npx grunt
-
-dev:
-	npm run dev
+dev: build
+	npx grunt & npm run dev
 
 deploy:
 	npm run deploy
