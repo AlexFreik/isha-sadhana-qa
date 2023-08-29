@@ -2,8 +2,9 @@ const bm25 = require('wink-bm25-text-search');
 const nlp = require('wink-nlp-utils');
 const bhutaShuddhi = require('./data/bhuta-shuddhi.json');
 const simhaKriya = require('./data/simha-kriya.json');
+const sashtanga = require('./data/sashtanga.json');
 const others = require('./data/others.json');
-const docs = bhutaShuddhi.concat(others).concat(simhaKriya);
+const docs = bhutaShuddhi.concat(others).concat(simhaKriya).concat(sashtanga);
 var getSpottedTerms = require('wink-bm25-text-search/runkit/get-spotted-terms.js');
 
 var engine = bm25();
