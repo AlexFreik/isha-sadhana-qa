@@ -3,6 +3,8 @@
 pretty:
 	npx prettier --write .
 
+build:
+	npx grunt browserify
 watch:
 	npx grunt
 
