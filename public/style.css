@@ -82,21 +82,34 @@ input:focus {
 	color: #aaa;
 }
 
-h3,
-h2 {
+.question, .ans, h2 {
 	margin-bottom: 0;
 }
 
-h3 {
-	margin-top: 60px;
+#results .question:first-child {
+	font-size: 24px;
 }
 
-p {
+.question {
+	font-size: 18px;
+	font-weight: 600;
+}
+
+#results .ans:nth-child(2)  {
+	font-size: 19px;
+}
+
+.ans {
+	font-size: 14px;
 	margin-top: 0;
+	margin-bottom: 60px;
 }
 
-p mark,
-small mark {
+.question p {
+	margin: 0 auto;
+}
+
+.ans mark {
 	background: #6c307d;
 	color: white;
 	padding: 0 0.3rem;
@@ -105,8 +118,7 @@ small mark {
 	border-radius: 2px;
 }
 
-h2 mark,
-h3 mark {
+.question mark {
 	background: transparent;
 	text-decoration: underline;
 	text-decoration-color: #6c307d;
