@@ -50,7 +50,7 @@ input {
 	width: 100%;
 	font-size: 40px;
 	background: transparent;
-	margin-bottom: 30px;
+	margin-bottom: 50px;
 }
 
 input::placeholder {
@@ -66,7 +66,7 @@ input:focus {
 	font-family: 'Hoefler Text', Georgia, serif;
 	color: #666;
 	font-size: 18px;
-	margin-top: 60px;
+	margin-top: 40px;
 }
 
 #noresults {
@@ -82,21 +82,36 @@ input:focus {
 	color: #aaa;
 }
 
-h3,
+.question,
+.ans,
 h2 {
 	margin-bottom: 0;
 }
 
-h3 {
-	margin-top: 60px;
+.question:first-child {
+	font-size: 24px;
 }
 
-p {
-	margin-top: 0;
+.question {
+	font-size: 19px;
+	font-weight: 600;
 }
 
-p mark,
-small mark {
+#results .ans:nth-child(2) {
+	font-size: 16px;
+}
+
+.ans {
+	font-size: 14px;
+	margin-top: -10px;
+	margin-bottom: 60px;
+}
+
+.question p {
+	margin: 0 auto;
+}
+
+.ans mark {
 	background: #6c307d;
 	color: white;
 	padding: 0 0.3rem;
@@ -105,8 +120,7 @@ small mark {
 	border-radius: 2px;
 }
 
-h2 mark,
-h3 mark {
+.question mark {
 	background: transparent;
 	text-decoration: underline;
 	text-decoration-color: #6c307d;

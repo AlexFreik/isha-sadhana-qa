@@ -1,10 +1,7 @@
 const bm25 = require('wink-bm25-text-search');
 const nlp = require('wink-nlp-utils');
-const bhutaShuddhi = require('./data/bhuta-shuddhi.json');
-const simhaKriya = require('./data/simha-kriya.json');
-const sashtanga = require('./data/sashtanga.json');
-const others = require('./data/others.json');
-const docs = bhutaShuddhi.concat(others).concat(simhaKriya).concat(sashtanga);
+const docs = require('./data/bundle.json');
+
 var getSpottedTerms = require('wink-bm25-text-search/runkit/get-spotted-terms.js');
 
 var engine = bm25();
@@ -23,55 +20,45 @@ docs.forEach(function (doc, i) {
 engine.consolidate();
 
 window.addEventListener('DOMContentLoaded', function () {
-	hide('title');
-	hide('body');
+	hide('results');
 	hide('noresults');
-	text('other', '');
+
 	document.getElementById('search').addEventListener('keyup', function (el) {
+		hide('results');
+		hide('noresults');
+		hide('help');
+
 		if (el.target.value === '') {
-			hide('title');
-			hide('body');
-			hide('noresults');
-			text('other', '');
 			show('help');
 			return false;
-		} else {
-			hide('help');
 		}
 
 		var results = engine.search(el.target.value);
 		if (results.length < 1) {
-			hide('title');
-			hide('body');
-			text('other', '');
 			show('noresults');
-		} else {
-			var spotted = getSpottedTerms(
-				results,
-				el.target.value,
-				docs,
-				['q', 'a'],
-				pipe,
-				3,
-			);
-			hide('noresults');
-			var result = docs[results[0][0]];
-			show('title');
-			show('body');
-			html('title', highlightTerms(result.q, spotted));
-			html('body', highlightTerms(result.a, spotted));
-			text('other', '');
-			if (results.length > 1) {
-				for (var i = 1; i < results.length; i++) {
-					var result = docs[results[i][0]];
-					document.getElementById('other').innerHTML +=
-						'<h3>' + highlightTerms(result.q, spotted) + '</h3>';
-					document.getElementById('other').innerHTML +=
-						'<small>' +
-						highlightTerms(result.a, spotted) +
-						'</small>';
-				}
-			}
+			return false;
+		}
+
+		show('results');
+		var spotted = getSpottedTerms(
+			results,
+			el.target.value,
+			docs,
+			['q', 'a'],
+			pipe,
+			3,
+		);
+
+		var resultsElem = document.getElementById('results');
+		resultsElem.innerHTML = '';
+		for (let i = 0; i < results.length; i++) {
+			const result = docs[results[i][0]];
+			resultsElem.innerHTML += `<div class="question">${marked.parse(
+				highlightTerms(result.q, spotted),
+			)}</div>`;
+			resultsElem.innerHTML += `<div class="ans">${marked.parse(
+				highlightTerms(result.a, spotted),
+			)}</div>`;
 		}
 	});
 
@@ -87,15 +74,18 @@ window.addEventListener('DOMContentLoaded', function () {
 		document.getElementById(id).setAttribute('class', 'hidden');
 		document.getElementById(id).style.display = 'none';
 	}
+
 	function show(id) {
 		document.getElementById(id).style.display = 'block';
 		window.setTimeout(function () {
 			document.getElementById(id).setAttribute('class', 'shown');
 		}, 0);
 	}
+
 	function text(id, text) {
 		document.getElementById(id).innerText = text;
 	}
+
 	function html(id, text) {
 		document.getElementById(id).innerHTML = text;
 	}
