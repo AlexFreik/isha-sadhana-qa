@@ -53,10 +53,12 @@ window.addEventListener('DOMContentLoaded', function () {
 		resultsElem.innerHTML = '';
 		for (let i = 0; i < results.length; i++) {
 			const result = docs[results[i][0]];
-			resultsElem.innerHTML +=
-				`<div class="question">${marked.parse(highlightTerms(result.q, spotted))}</div>`;
-			resultsElem.innerHTML +=
-			`<div class="ans">${marked.parse(highlightTerms(result.a, spotted))}</div>`;
+			resultsElem.innerHTML += `<div class="question">${marked.parse(
+				highlightTerms(result.q, spotted),
+			)}</div>`;
+			resultsElem.innerHTML += `<div class="ans">${marked.parse(
+				highlightTerms(result.a, spotted),
+			)}</div>`;
 		}
 	});
 
