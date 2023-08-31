@@ -50,7 +50,7 @@ input {
 	width: 100%;
 	font-size: 40px;
 	background: transparent;
-	margin-bottom: 30px;
+	margin-bottom: 50px;
 }
 
 input::placeholder {
@@ -66,7 +66,7 @@ input:focus {
 	font-family: 'Hoefler Text', Georgia, serif;
 	color: #666;
 	font-size: 18px;
-	margin-top: 60px;
+	margin-top: 40px;
 }
 
 #noresults {
@@ -86,22 +86,22 @@ input:focus {
 	margin-bottom: 0;
 }
 
-#results .question:first-child {
+.question:first-child {
 	font-size: 24px;
 }
 
 .question {
-	font-size: 18px;
+	font-size: 19px;
 	font-weight: 600;
 }
 
 #results .ans:nth-child(2)  {
-	font-size: 19px;
+	font-size: 16px;
 }
 
 .ans {
 	font-size: 14px;
-	margin-top: 0;
+	margin-top: -10px;
 	margin-bottom: 60px;
 }
 
